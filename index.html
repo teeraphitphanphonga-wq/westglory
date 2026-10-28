@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>West Glory Co., Ltd. – Polyethylene Film Manufacturer</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Sans+SC:wght@300;400;500;700&family=Playfair+Display:wght@400;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --ink:#0e1117;--ink2:#1c2333;--steel:#2b3a52;--silver:#5e7395;
+  --mist:#9badc4;--line:#dce4ef;--bg:#f4f7fb;--white:#ffffff;
+  --red:#c0392b;--red2:#e74c3c;--gold:#b8922a;--gold2:#d4a843;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Noto Sans Thai','Noto Sans JP','Noto Sans SC',sans-serif;background:var(--white);color:var(--ink);overflow-x:hidden;}
+
+/* ── LANG SWITCHER ── */
+.lang-bar{
+  background:#060d18;padding:7px 6%;
+  display:flex;justify-content:flex-end;align-items:center;gap:6px;
+}
+.lang-btn{
+  display:flex;align-items:center;gap:5px;
+  padding:5px 12px;border-radius:20px;border:1px solid rgba(255,255,255,0.1);
+  background:transparent;color:rgba(155,173,196,0.7);
+  font-size:0.78rem;font-weight:600;letter-spacing:.3px;cursor:pointer;
+  transition:all .2s;font-family:inherit;
+}
+.lang-btn:hover{background:rgba(255,255,255,0.07);color:var(--white);border-color:rgba(255,255,255,0.2);}
+.lang-btn.active{
+  background:var(--red);color:var(--white);border-color:var(--red);
+}
+.lang-flag{font-size:1rem;line-height:1;}
+.lang-sep{width:1px;height:18px;background:rgba(255,255,255,0.08);}
+
+/* ── TOPBAR ── */
+.topbar{
+  background:var(--ink);padding:9px 6%;
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:0.78rem;color:var(--mist);letter-spacing:.5px;
+}
+.topbar a{color:var(--mist);text-decoration:none;transition:color .2s;}
+.topbar a:hover{color:var(--white);}
+.topbar-left{display:flex;gap:24px;flex-wrap:wrap;}
+.topbar-right{display:flex;gap:20px;}
+.topbar-cert{display:flex;align-items:center;gap:6px;color:var(--gold2);font-weight:500;}
+
+/* ── NAVBAR ── */
+nav{
+  position:sticky;top:0;z-index:200;background:var(--white);
+  border-bottom:2px solid var(--line);padding:0 6%;
+  display:flex;align-items:center;justify-content:space-between;
+  box-shadow:0 2px 16px rgba(14,17,23,0.07);
+}
+.logo-wrap{padding:14px 0;display:flex;align-items:center;gap:12px;}
+.logo-text{display:flex;flex-direction:column;}
+.logo-en{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--ink);letter-spacing:1px;line-height:1;}
+.logo-en span{color:var(--red);}
+.logo-sub{font-size:0.7rem;color:var(--silver);letter-spacing:2.5px;text-transform:uppercase;margin-top:3px;}
+nav ul{list-style:none;display:flex;gap:0;}
+nav ul li a{
+  display:block;padding:26px 16px;font-size:0.88rem;font-weight:600;color:var(--steel);
+  text-decoration:none;letter-spacing:.3px;border-bottom:3px solid transparent;
+  transition:color .2s,border-color .2s;
+}
+nav ul li a:hover{color:var(--red);border-bottom-color:var(--red);}
+.nav-contact{
+  background:var(--red);color:var(--white)!important;
+  padding:12px 24px!important;border-radius:4px;border-bottom:none!important;
+  font-weight:700!important;transition:background .2s!important;
+}
+.nav-contact:hover{background:var(--red2)!important;border-bottom:none!important;}
+
+/* ── HERO ── */
+.hero{background:var(--ink);min-height:88vh;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden;}
+.hero-left{padding:80px 0 80px 6%;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2;}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:'DM Mono',monospace;font-size:0.75rem;color:var(--gold2);
+  letter-spacing:2px;text-transform:uppercase;
+  background:rgba(184,146,42,0.12);border:1px solid rgba(212,168,67,0.3);
+  padding:7px 14px;border-radius:3px;margin-bottom:28px;width:fit-content;
+  animation:fadeUp .7s ease both;
+}
+.hero h1{
+  font-family:'Playfair Display',serif;font-size:clamp(2.4rem,4.5vw,4rem);
+  font-weight:700;color:var(--white);line-height:1.15;margin-bottom:24px;
+  animation:fadeUp .8s .1s ease both;
+}
+.hero h1 em{color:var(--gold2);font-style:normal;}
+.hero-desc{font-size:1rem;color:var(--mist);line-height:1.85;max-width:460px;margin-bottom:40px;animation:fadeUp .8s .2s ease both;}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;animation:fadeUp .8s .3s ease both;}
+.btn-red{background:var(--red);color:var(--white);padding:14px 32px;border-radius:4px;font-weight:700;font-size:0.95rem;text-decoration:none;border:2px solid var(--red);transition:background .2s,transform .2s;display:inline-block;}
+.btn-red:hover{background:var(--red2);transform:translateY(-1px);}
+.btn-ghost{background:transparent;color:var(--white);padding:14px 32px;border-radius:4px;font-weight:600;font-size:0.95rem;text-decoration:none;border:2px solid rgba(255,255,255,0.25);transition:border-color .2s,background .2s;display:inline-block;}
+.btn-ghost:hover{border-color:rgba(255,255,255,0.6);background:rgba(255,255,255,0.06);}
+.hero-badges{display:flex;gap:20px;margin-top:48px;flex-wrap:wrap;animation:fadeUp .8s .45s ease both;}
+.hero-badge{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;padding:14px 20px;text-align:center;min-width:100px;}
+.hero-badge .num{font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:700;color:var(--gold2);line-height:1;display:block;}
+.hero-badge .lbl{font-size:0.75rem;color:var(--mist);margin-top:4px;display:block;}
+.hero-right{position:relative;overflow:hidden;}
+.hero-right-inner{
+  position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(192,57,43,0.15) 0%,transparent 50%),
+  repeating-linear-gradient(45deg,transparent,transparent 28px,rgba(255,255,255,0.025) 28px,rgba(255,255,255,0.025) 29px);
+  display:flex;align-items:center;justify-content:center;
+}
+.hero-deco{font-family:'Playfair Display',serif;font-size:clamp(6rem,12vw,11rem);font-weight:700;color:rgba(255,255,255,0.04);line-height:1;text-align:center;letter-spacing:-4px;user-select:none;}
+.hero-card{position:absolute;bottom:40px;right:40px;background:var(--white);border-radius:8px;padding:20px 24px;box-shadow:0 16px 40px rgba(0,0,0,0.3);min-width:220px;animation:fadeUp .8s .5s ease both;}
+.hero-card .hc-label{font-size:0.72rem;color:var(--silver);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px;}
+.hero-card .hc-val{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--ink);}
+.hero-card .hc-sub{font-size:0.8rem;color:var(--silver);margin-top:4px;}
+.hero-card-divider{height:1px;background:var(--line);margin:14px 0;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+
+/* ── TRUST BAR ── */
+.trust-bar{background:var(--ink2);padding:20px 6%;display:flex;align-items:center;justify-content:center;gap:48px;flex-wrap:wrap;border-bottom:1px solid rgba(255,255,255,0.07);}
+.trust-item{display:flex;align-items:center;gap:10px;color:var(--mist);font-size:0.85rem;font-weight:500;}
+.trust-icon{width:32px;height:32px;border-radius:50%;background:rgba(184,146,42,0.15);border:1px solid rgba(212,168,67,0.25);display:flex;align-items:center;justify-content:center;font-size:0.9rem;}
+.trust-divider{width:1px;height:28px;background:rgba(255,255,255,0.1);}
+
+/* ── SECTIONS ── */
+section{padding:90px 6%;}
+.sec-label{font-family:'DM Mono',monospace;font-size:0.73rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--red);margin-bottom:12px;display:block;}
+.sec-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:16px;}
+.sec-body{font-size:1rem;color:var(--silver);line-height:1.85;max-width:560px;}
+.divider-line{width:48px;height:3px;background:var(--red);margin:20px 0 28px;}
+
+/* ── ABOUT ── */
+#about{background:var(--bg);padding:90px 6%;}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.about-visual{position:relative;}
+.about-img-box{width:100%;aspect-ratio:4/3;border-radius:8px;background:linear-gradient(135deg,var(--ink) 0%,var(--steel) 100%);position:relative;overflow:hidden;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;}
+.about-img-box-inner{font-family:'Playfair Display',serif;font-size:5rem;color:rgba(255,255,255,0.06);font-weight:700;}
+.about-float{position:absolute;bottom:-24px;right:-24px;background:var(--red);color:var(--white);border-radius:8px;padding:22px 26px;text-align:center;box-shadow:0 8px 30px rgba(192,57,43,0.35);}
+.about-float .f-num{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:700;line-height:1;}
+.about-float .f-txt{font-size:0.78rem;margin-top:4px;opacity:0.9;}
+.about-facts{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:36px;}
+.fact-box{background:var(--white);border:1px solid var(--line);border-radius:6px;padding:20px;border-left:3px solid var(--red);transition:box-shadow .2s;}
+.fact-box:hover{box-shadow:0 4px 20px rgba(0,0,0,0.08);}
+.fact-box h4{font-size:0.82rem;font-weight:700;color:var(--ink);margin-bottom:6px;}
+.fact-box p{font-size:0.82rem;color:var(--silver);line-height:1.6;}
+
+/* ── PRODUCTS ── */
+#products{background:var(--white);}
+.products-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:52px;flex-wrap:wrap;gap:20px;}
+.products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden;}
+.prod-card{background:var(--white);padding:40px 32px;transition:background .25s;}
+.prod-card:hover{background:var(--bg);}
+.prod-num{font-family:'DM Mono',monospace;font-size:0.72rem;color:var(--mist);letter-spacing:2px;margin-bottom:20px;display:block;}
+.prod-icon-wrap{width:52px;height:52px;border-radius:8px;margin-bottom:20px;background:rgba(192,57,43,0.07);border:1px solid rgba(192,57,43,0.15);display:flex;align-items:center;justify-content:center;font-size:1.5rem;}
+.prod-card h3{font-size:1.05rem;font-weight:700;color:var(--ink);margin-bottom:10px;}
+.prod-card p{font-size:0.87rem;color:var(--silver);line-height:1.75;margin-bottom:18px;}
+.prod-tags{display:flex;flex-wrap:wrap;gap:6px;}
+.prod-tag{font-size:0.72rem;font-weight:600;letter-spacing:.5px;background:var(--bg);border:1px solid var(--line);color:var(--steel);padding:4px 10px;border-radius:3px;}
+
+/* ── CLIENTS ── */
+#clients{background:var(--ink);padding:80px 6%;}
+.clients-inner{display:grid;grid-template-columns:1fr 2fr;gap:72px;align-items:center;}
+.clients-right{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.client-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:28px 24px;transition:border-color .25s,background .25s;}
+.client-card:hover{border-color:rgba(212,168,67,0.4);background:rgba(255,255,255,0.07);}
+.cc-flag{font-size:1.8rem;margin-bottom:12px;display:block;}
+.cc-country{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--white);margin-bottom:8px;}
+.cc-desc{font-size:0.83rem;color:var(--mist);line-height:1.65;}
+.cc-pct{font-family:'DM Mono',monospace;font-size:1.5rem;font-weight:500;color:var(--gold2);margin-top:14px;display:block;}
+
+/* ── CERTS ── */
+#certs{background:var(--bg);}
+.certs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:52px;}
+.cert-card{background:var(--white);border:1px solid var(--line);border-radius:8px;padding:32px 24px;text-align:center;transition:box-shadow .25s,transform .25s;}
+.cert-card:hover{box-shadow:0 8px 32px rgba(0,0,0,0.08);transform:translateY(-3px);}
+.cert-icon{font-size:2.4rem;margin-bottom:16px;display:block;}
+.cert-card h4{font-size:0.95rem;font-weight:700;color:var(--ink);margin-bottom:8px;}
+.cert-card p{font-size:0.82rem;color:var(--silver);line-height:1.65;}
+
+/* ── PROCESS ── */
+#process{background:var(--white);}
+.process-timeline{margin-top:56px;position:relative;}
+.process-timeline::before{content:'';position:absolute;left:26px;top:0;bottom:0;width:2px;background:var(--line);}
+.process-step{display:grid;grid-template-columns:52px 1fr;gap:28px;margin-bottom:40px;position:relative;}
+.ps-num{width:52px;height:52px;border-radius:50%;background:var(--ink);color:var(--white);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;flex-shrink:0;position:relative;z-index:1;border:3px solid var(--white);box-shadow:0 0 0 2px var(--ink);}
+.ps-content{padding-top:12px;}
+.ps-content h3{font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:6px;}
+.ps-content p{font-size:0.88rem;color:var(--silver);line-height:1.75;}
+
+/* ── CONTACT ── */
+#contact{background:var(--ink2);}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;}
+.contact-info h2{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;color:var(--white);margin-bottom:16px;}
+.contact-info p{color:var(--mist);line-height:1.85;margin-bottom:36px;font-size:0.97rem;}
+.c-details{display:flex;flex-direction:column;gap:18px;}
+.c-row{display:flex;align-items:flex-start;gap:14px;}
+.c-ic{width:40px;height:40px;min-width:40px;border-radius:6px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;font-size:1rem;}
+.c-row-text h5{font-size:0.8rem;color:var(--mist);letter-spacing:.5px;text-transform:uppercase;margin-bottom:4px;}
+.c-row-text p{font-size:0.92rem;color:var(--white);}
+.contact-form{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:36px;}
+.contact-form h3{font-size:1.1rem;font-weight:700;color:var(--white);margin-bottom:24px;}
+.form-group{margin-bottom:18px;}
+.form-group label{display:block;font-size:0.8rem;font-weight:600;color:var(--mist);letter-spacing:.5px;margin-bottom:7px;text-transform:uppercase;}
+.form-group input,.form-group textarea,.form-group select{width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:5px;padding:12px 14px;color:var(--white);font-family:inherit;font-size:0.92rem;transition:border-color .2s;outline:none;}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:rgba(212,168,67,0.5);}
+.form-group textarea{height:110px;resize:vertical;}
+.form-group select option{background:var(--ink2);color:var(--white);}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.submit-btn{width:100%;background:var(--red);color:var(--white);padding:14px;border-radius:5px;border:none;font-family:inherit;font-size:0.97rem;font-weight:700;cursor:pointer;transition:background .2s;margin-top:8px;}
+.submit-btn:hover{background:var(--red2);}
+.email-list{display:flex;flex-direction:column;gap:8px;margin-top:2px;}
+.email-entry{display:flex;flex-direction:column;gap:2px;}
+.email-role{font-size:0.72rem;color:var(--mist);letter-spacing:.5px;text-transform:uppercase;}
+.email-link{font-size:0.9rem;color:var(--white);text-decoration:none;transition:color .2s;}
+.email-link:hover{color:var(--gold2);text-decoration:underline;}
+
+/* ── FOOTER ── */
+footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.07);}
+.footer-main{padding:60px 6% 40px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;}
+.footer-brand .logo-en{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--white);}
+.footer-brand .logo-en span{color:var(--red);}
+.footer-brand p{font-size:0.85rem;color:var(--mist);line-height:1.75;margin-top:12px;max-width:240px;}
+.footer-col h4{font-size:0.78rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--mist);margin-bottom:18px;}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.footer-col ul li a{font-size:0.87rem;color:rgba(155,173,196,0.7);text-decoration:none;transition:color .2s;}
+.footer-col ul li a:hover{color:var(--white);}
+.footer-bottom{padding:20px 6%;border-top:1px solid rgba(255,255,255,0.07);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.footer-bottom p{font-size:0.8rem;color:rgba(155,173,196,0.5);}
+.footer-cert{display:flex;gap:10px;align-items:center;}
+.fcert{font-size:0.72rem;font-weight:700;letter-spacing:1px;background:rgba(184,146,42,0.12);border:1px solid rgba(212,168,67,0.25);color:var(--gold2);padding:4px 10px;border-radius:3px;}
+
+/* ── LOGO IMAGE ── */
+.logo-img{width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;}
+.logo-wrap{display:flex;align-items:center;gap:12px;}
+.logo-text{display:flex;flex-direction:column;}
+.footer-logo-img{width:52px;height:52px;border-radius:50%;object-fit:cover;margin-bottom:12px;}
+
+/* ── LANG TRANSITION ── */
+[data-i18n]{transition:opacity .18s ease;}
+.lang-switching [data-i18n]{opacity:0;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:960px){
+  .hero{grid-template-columns:1fr;}.hero-right{display:none;}
+  .about-grid,.contact-grid,.clients-inner{grid-template-columns:1fr;gap:40px;}
+  .products-grid{grid-template-columns:1fr 1fr;}
+  .certs-grid{grid-template-columns:1fr 1fr;}
+  .footer-main{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:600px){
+  nav ul{display:none;}
+  .products-grid,.certs-grid,.clients-right{grid-template-columns:1fr;}
+  .footer-main{grid-template-columns:1fr;}
+  .form-row{grid-template-columns:1fr;}
+  .trust-bar{gap:20px;}
+  .lang-bar{justify-content:center;flex-wrap:wrap;}
+}
+</style>
+</head>
+<body>
+
+<!-- ── LANGUAGE BAR ── -->
+<div class="lang-bar">
+  <button class="lang-btn active" onclick="setLang('th', this)"><span class="lang-flag">🇹🇭</span> ไทย</button>
+  <div class="lang-sep"></div>
+  <button class="lang-btn" onclick="setLang('en', this)"><span class="lang-flag">🇬🇧</span> English</button>
+  <div class="lang-sep"></div>
+  <button class="lang-btn" onclick="setLang('ja', this)"><span class="lang-flag">🇯🇵</span> 日本語</button>
+  <div class="lang-sep"></div>
+  <button class="lang-btn" onclick="setLang('zh', this)"><span class="lang-flag">🇨🇳</span> 中文</button>
+</div>
+
+<!-- ── TOP BAR ── -->
+<div class="topbar">
+  <div class="topbar-left">
+    <span>📞 Tel: 038-066433-7</span>
+    <a href="mailto:s.nishide@westglory.co.th">✉ s.nishide@westglory.co.th</a>
+    <span>📍 Sriracha, Chonburi, Thailand</span>
+  </div>
+  <div class="topbar-right">
+    <span class="topbar-cert">🏅 BOI Approved</span>
+    <span class="topbar-cert">✦ ISO Certified</span>
+  </div>
+</div>
+
+<!-- ── NAVBAR ── -->
+<nav>
+  <div class="logo-wrap">
+    <img class="logo-img" src="data:image/jpeg;base64,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" alt="West Glory Logo"/>
+    <div class="logo-text">
+      <div class="logo-en">West <span>Glory</span></div>
+      <div class="logo-sub">Company Limited · Est. 1999</div>
+    </div>
+  </div>
+  <ul>
+    <li><a href="#about" data-i18n="nav_about">เกี่ยวกับเรา</a></li>
+    <li><a href="#products" data-i18n="nav_products">ผลิตภัณฑ์</a></li>
+    <li><a href="#clients" data-i18n="nav_clients">ตลาดส่งออก</a></li>
+    <li><a href="#certs" data-i18n="nav_certs">มาตรฐาน</a></li>
+    <li><a href="#process" data-i18n="nav_process">กระบวนการผลิต</a></li>
+    <li><a href="#contact" class="nav-contact" data-i18n="nav_contact">ติดต่อเรา</a></li>
+  </ul>
+</nav>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-left">
+    <div class="hero-tag" data-i18n="hero_tag">✦ Polyethylene Film Manufacturer · Since 1999</div>
+    <h1 data-i18n="hero_h1">ผู้ผลิต<em>ฟิล์มโพลิเอทิลีน</em><br/>มาตรฐานระดับโลก</h1>
+    <p class="hero-desc" data-i18n="hero_desc">West Glory Co., Ltd. ผู้ผลิตฟิล์ม PE คุณภาพสูงสำหรับอุตสาหกรรมยานยนต์และบรรจุภัณฑ์ ส่งออกหลักไปยังผู้ผลิตรถยนต์ชั้นนำในญี่ปุ่น ด้วยเทคโนโลยีจาก Asahi Petrochemicals ฮามามัตสึ</p>
+    <div class="hero-btns">
+      <a href="#products" class="btn-red" data-i18n="hero_btn1">ดูผลิตภัณฑ์</a>
+      <a href="#contact" class="btn-ghost" data-i18n="hero_btn2">ขอใบเสนอราคา</a>
+    </div>
+    <div class="hero-badges">
+      <div class="hero-badge"><span class="num">25+</span><span class="lbl" data-i18n="badge_years">ปีประสบการณ์</span></div>
+      <div class="hero-badge"><span class="num">BOI</span><span class="lbl">Approved</span></div>
+      <div class="hero-badge"><span class="num">JPN</span><span class="lbl" data-i18n="badge_export">ตลาดส่งออก</span></div>
+      <div class="hero-badge"><span class="num">ISO</span><span class="lbl">Certified</span></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-right-inner"><div class="hero-deco">PE<br/>FILM</div></div>
+    <div class="hero-card">
+      <div class="hc-label" data-i18n="hcard_status_label">สถานะโรงงาน</div>
+      <div class="hc-val" data-i18n="hcard_status_val">กำลังผลิต</div>
+      <div class="hc-sub">Sriracha, Chonburi</div>
+      <div class="hero-card-divider"></div>
+      <div class="hc-label" data-i18n="hcard_cert_label">ใบรับรองล่าสุด</div>
+      <div class="hc-val" style="font-size:1.1rem;color:var(--gold);">BOI Thailand · ISO</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── TRUST BAR ── -->
+<div class="trust-bar">
+  <div class="trust-item"><div class="trust-icon">🇯🇵</div><span data-i18n="trust1">ส่งออกหลักไปญี่ปุ่น</span></div>
+  <div class="trust-divider"></div>
+  <div class="trust-item"><div class="trust-icon">🏭</div><span data-i18n="trust2">โรงงาน ศรีราชา ชลบุรี</span></div>
+  <div class="trust-divider"></div>
+  <div class="trust-item"><div class="trust-icon">🤝</div><span data-i18n="trust3">บริษัทในเครือ Asahi Petrochemicals</span></div>
+  <div class="trust-divider"></div>
+  <div class="trust-item"><div class="trust-icon">✅</div><span data-i18n="trust4">ได้รับการรับรอง BOI Thailand</span></div>
+  <div class="trust-divider"></div>
+  <div class="trust-item"><div class="trust-icon">📅</div><span data-i18n="trust5">ก่อตั้งปี ค.ศ. 1999</span></div>
+</div>
+
+<!-- ── ABOUT ── -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-visual">
+      <div class="about-img-box"><div class="about-img-box-inner">WEST<br/>GLORY</div></div>
+      <div class="about-float"><div class="f-num">1999</div><div class="f-txt" data-i18n="founded">ปีที่ก่อตั้ง</div></div>
+    </div>
+    <div>
+      <span class="sec-label" data-i18n="about_label">เกี่ยวกับบริษัท</span>
+      <h2 class="sec-title" data-i18n="about_title">ประสบการณ์กว่า<br/>25 ปีในอุตสาหกรรม PE Film</h2>
+      <div class="divider-line"></div>
+      <p class="sec-body" data-i18n="about_body">West Glory Company Limited ก่อตั้งขึ้นในปี 1999 เป็นบริษัทที่ได้รับการอนุมัติจาก BOI ประเทศไทย ตั้งอยู่ที่อำเภอศรีราชา ห่างจากกรุงเทพฯ เพียง 90 นาที เราเชี่ยวชาญในการผลิตฟิล์มโพลิเอทิลีนสำหรับหุ้มเบาะรถยนต์ ฟิล์มแผ่น และถุงอุตสาหกรรม</p>
+      <div class="about-facts">
+        <div class="fact-box"><h4>🇯🇵 <span data-i18n="fact1_h">บริษัทในเครือจากญี่ปุ่น</span></h4><p data-i18n="fact1_p">เป็นบริษัทลูกของ Asahi Petrochemicals ฮามามัตสึ ซิตี้ ประเทศญี่ปุ่น</p></div>
+        <div class="fact-box"><h4>🏅 BOI Approved</h4><p data-i18n="fact2_p">ได้รับการส่งเสริมจากสำนักงานคณะกรรมการส่งเสริมการลงทุน</p></div>
+        <div class="fact-box"><h4>🏭 <span data-i18n="fact3_h">โรงงานมาตรฐาน</span></h4><p data-i18n="fact3_p">ตั้งอยู่ในทำเลเชิงยุทธศาสตร์ที่ศรีราชา ชลบุรี ใกล้ท่าเรือและนิคมอุตสาหกรรม</p></div>
+        <div class="fact-box"><h4>🔬 <span data-i18n="fact4_h">เทคโนโลยีญี่ปุ่น</span></h4><p data-i18n="fact4_p">นำความรู้และประสบการณ์กว่า 20 ปีจาก Asahi Petrochemicals มาใช้</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PRODUCTS ── -->
+<section id="products">
+  <div class="products-header">
+    <div>
+      <span class="sec-label" data-i18n="prod_label">ผลิตภัณฑ์ของเรา</span>
+      <h2 class="sec-title" data-i18n="prod_title">Polyethylene Film<br/>ครบทุกประเภท</h2>
+    </div>
+    <p style="color:var(--silver);font-size:0.92rem;max-width:300px;text-align:right;line-height:1.7;" data-i18n="prod_sub">ทุกผลิตภัณฑ์ผ่านการตรวจสอบคุณภาพอย่างเข้มงวดก่อนส่งมอบ</p>
+  </div>
+  <div class="products-grid">
+    <div class="prod-card">
+      <span class="prod-num">01 — Film</span>
+      <div class="prod-icon-wrap">🚗</div>
+      <h3 data-i18n="p1_h">Seat Cover Film</h3>
+      <p data-i18n="p1_p">ฟิล์ม PE สำหรับหุ้มเบาะรถยนต์ ออกแบบมาเพื่อป้องกันฝุ่นและรอยขีดข่วนในกระบวนการประกอบ ส่งตรงให้ผู้ผลิตรถยนต์ญี่ปุ่น</p>
+      <div class="prod-tags"><span class="prod-tag">Automotive</span><span class="prod-tag">Japan Export</span></div>
+    </div>
+    <div class="prod-card">
+      <span class="prod-num">02 — Sheet</span>
+      <div class="prod-icon-wrap">📄</div>
+      <h3 data-i18n="p2_h">Film Sheet Cover</h3>
+      <p data-i18n="p2_p">แผ่นฟิล์มคลุมสินค้า หลากหลายขนาดและความหนา ใช้งานได้ทั้งในอุตสาหกรรมยานยนต์และบรรจุภัณฑ์ทั่วไป</p>
+      <div class="prod-tags"><span class="prod-tag">Multi-Purpose</span><span class="prod-tag">Custom Size</span></div>
+    </div>
+    <div class="prod-card">
+      <span class="prod-num">03 — Bag</span>
+      <div class="prod-icon-wrap">🛍️</div>
+      <h3 data-i18n="p3_h">Shopping Bags</h3>
+      <p data-i18n="p3_p">ถุงโพลิเอทิลีนสำหรับค้าปลีก ทนทาน น้ำหนักเบา ปรับแต่งขนาดและสีสันได้ตามความต้องการ</p>
+      <div class="prod-tags"><span class="prod-tag">Retail</span><span class="prod-tag">Custom Print</span></div>
+    </div>
+    <div class="prod-card">
+      <span class="prod-num">04 — Industrial</span>
+      <div class="prod-icon-wrap">🏭</div>
+      <h3 data-i18n="p4_h">Industrial Bags</h3>
+      <p data-i18n="p4_p">ถุงอุตสาหกรรมขนาดใหญ่ รับน้ำหนักได้สูง ทนทานต่อสารเคมีและความชื้น จำหน่ายทั่วจังหวัดในประเทศญี่ปุ่น</p>
+      <div class="prod-tags"><span class="prod-tag">Heavy Duty</span><span class="prod-tag">Chemical Resistant</span></div>
+    </div>
+    <div class="prod-card">
+      <span class="prod-num">05 — Marine</span>
+      <div class="prod-icon-wrap">⚓</div>
+      <h3 data-i18n="p5_h">Aquamarine Bags</h3>
+      <p data-i18n="p5_p">ถุงสำหรับงานใต้น้ำและอุตสาหกรรมประมง ทนทานต่อน้ำทะเลและสภาพแวดล้อมที่รุนแรง</p>
+      <div class="prod-tags"><span class="prod-tag">Marine Grade</span><span class="prod-tag">Saltwater Proof</span></div>
+    </div>
+    <div class="prod-card">
+      <span class="prod-num">06 — Custom</span>
+      <div class="prod-icon-wrap">⚙️</div>
+      <h3 data-i18n="p6_h">Custom Solutions</h3>
+      <p data-i18n="p6_p">บริการผลิตตามสเปคพิเศษของลูกค้า ออกแบบฟิล์มและถุง PE เฉพาะกิจตามความต้องการของอุตสาหกรรม</p>
+      <div class="prod-tags"><span class="prod-tag">OEM</span><span class="prod-tag">R&amp;D Support</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CLIENTS ── -->
+<section id="clients">
+  <div class="clients-inner">
+    <div>
+      <span class="sec-label" style="color:var(--gold2);" data-i18n="cli_label">ตลาดส่งออก</span>
+      <h2 class="sec-title" style="color:var(--white);" data-i18n="cli_title">ผลิตภัณฑ์ของเราอยู่ในมือ<br/>ผู้ผลิตชั้นนำทั่วโลก</h2>
+      <div class="divider-line" style="background:var(--gold2);"></div>
+      <p style="color:var(--mist);line-height:1.85;font-size:0.97rem;" data-i18n="cli_body">ส่วนใหญ่ของการผลิตจัดส่งไปยังผู้ผลิตรถยนต์รายใหญ่ในญี่ปุ่น พร้อมกับถุงอุตสาหกรรมและถุงอาความารีนที่จำหน่ายทั่วหลายจังหวัดในญี่ปุ่น</p>
+    </div>
+    <div class="clients-right">
+      <div class="client-card">
+        <span class="cc-flag">🇯🇵</span>
+        <div class="cc-country">Japan</div>
+        <p class="cc-desc" data-i18n="cli_jp">ลูกค้าหลักคือผู้ผลิตรถยนต์ชั้นนำและอุตสาหกรรมบรรจุภัณฑ์ทั่วประเทศ</p>
+        <span class="cc-pct">Primary</span>
+      </div>
+      <div class="client-card">
+        <span class="cc-flag">🇹🇭</span>
+        <div class="cc-country">Thailand</div>
+        <p class="cc-desc" data-i18n="cli_th">จัดจำหน่ายให้อุตสาหกรรมยานยนต์และนิคมอุตสาหกรรมในประเทศ</p>
+        <span class="cc-pct">Local</span>
+      </div>
+      <div class="client-card" style="grid-column:span 2;">
+        <span class="cc-flag">🤝</span>
+        <div class="cc-country">Asahi Petrochemicals Network</div>
+        <p class="cc-desc" data-i18n="cli_ashai">เครือข่ายพันธมิตรจาก Asahi Petrochemicals ฮามามัตสึ ซิตี้ ที่มีประสบการณ์กว่า 20 ปีในการผลิตฟิล์ม PE ระดับโลก ถ่ายทอดความเชี่ยวชาญสู่ West Glory โดยตรง</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CERTS ── -->
+<section id="certs">
+  <div style="text-align:center;margin-bottom:52px;">
+    <span class="sec-label" data-i18n="cert_label">มาตรฐานและการรับรอง</span>
+    <h2 class="sec-title" data-i18n="cert_title">ความน่าเชื่อถือ<br/>ที่ได้รับการรับรอง</h2>
+    <div class="divider-line" style="margin:20px auto 0;"></div>
+  </div>
+  <div class="certs-grid">
+    <div class="cert-card"><span class="cert-icon">🏅</span><h4>BOI Thailand</h4><p data-i18n="cert1_p">ได้รับการส่งเสริมและรับรองจากสำนักงานคณะกรรมการส่งเสริมการลงทุนแห่งประเทศไทย</p></div>
+    <div class="cert-card"><span class="cert-icon">📋</span><h4>Non-Thai Resident Capital</h4><p data-i18n="cert2_p">จดทะเบียนเป็นบริษัทที่มีทุนจดทะเบียนจากต่างประเทศ ภายใต้กฎหมายไทย</p></div>
+    <div class="cert-card"><span class="cert-icon">🔬</span><h4>Quality Control System</h4><p data-i18n="cert3_p">ระบบควบคุมคุณภาพตามมาตรฐานอุตสาหกรรมยานยนต์ญี่ปุ่นอย่างเข้มงวด</p></div>
+    <div class="cert-card"><span class="cert-icon">🌍</span><h4>Export Certified</h4><p data-i18n="cert4_p">ผ่านการรับรองสำหรับการส่งออกสินค้าไปยังประเทศญี่ปุ่นและตลาดต่างประเทศ</p></div>
+  </div>
+</section>
+
+<!-- ── PROCESS ── -->
+<section id="process">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;">
+    <div>
+      <span class="sec-label" data-i18n="proc_label">กระบวนการผลิต</span>
+      <h2 class="sec-title" data-i18n="proc_title">มาตรฐานการผลิต<br/>ระดับ OEM ญี่ปุ่น</h2>
+      <div class="divider-line"></div>
+      <p class="sec-body" data-i18n="proc_body">ทุกขั้นตอนการผลิตของเราได้รับการออกแบบตามมาตรฐานที่ผู้ผลิตรถยนต์ชั้นนำของญี่ปุ่นกำหนด เพื่อให้มั่นใจในคุณภาพที่สม่ำเสมอ</p>
+    </div>
+    <div class="process-timeline">
+      <div class="process-step"><div class="ps-num">1</div><div class="ps-content"><h3 data-i18n="step1_h">การคัดเลือกวัตถุดิบ</h3><p data-i18n="step1_p">คัดสรรเม็ดพลาสติก Polyethylene เกรดพรีเมียมจากซัพพลายเออร์ที่ผ่านการรับรองมาตรฐานสากล</p></div></div>
+      <div class="process-step"><div class="ps-num">2</div><div class="ps-content"><h3 data-i18n="step2_h">กระบวนการเป่าฟิล์ม</h3><p data-i18n="step2_p">ใช้เครื่องจักรเทคโนโลยีทันสมัยจากญี่ปุ่น ควบคุมความหนาและความกว้างอย่างแม่นยำ</p></div></div>
+      <div class="process-step"><div class="ps-num">3</div><div class="ps-content"><h3 data-i18n="step3_h">การตรวจสอบคุณภาพ</h3><p data-i18n="step3_p">ทดสอบทุกล็อตการผลิตตามมาตรฐาน JIS และข้อกำหนดเฉพาะของลูกค้า</p></div></div>
+      <div class="process-step"><div class="ps-num">4</div><div class="ps-content"><h3 data-i18n="step4_h">บรรจุภัณฑ์และจัดส่ง</h3><p data-i18n="step4_p">บรรจุตามมาตรฐานส่งออก พร้อมเอกสารรับรองครบถ้วน จัดส่งตรงเวลาตามกำหนด</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section id="contact">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h2 data-i18n="con_title">ติดต่อเรา</h2>
+      <div class="divider-line" style="background:var(--gold2);"></div>
+      <p data-i18n="con_body">ทีมงานของเราพร้อมตอบทุกคำถามและจัดทำใบเสนอราคาให้กับคุณโดยเร็วที่สุด</p>
+      <div class="c-details">
+        <div class="c-row"><div class="c-ic">📍</div><div class="c-row-text"><h5 data-i18n="con_addr_h">ที่อยู่โรงงาน</h5><p>278/1 Moo 7, Nongkarm District, Sriracha, Chonburi 20110, Thailand</p></div></div>
+        <div class="c-row"><div class="c-ic">📞</div><div class="c-row-text"><h5 data-i18n="con_tel_h">โทรศัพท์</h5><p>038-066433-7</p></div></div>
+        <div class="c-row">
+          <div class="c-ic">✉️</div>
+          <div class="c-row-text">
+            <h5 data-i18n="con_email_h">อีเมล</h5>
+            <div class="email-list">
+              <div class="email-entry">
+                <span class="email-role" data-i18n="email_role1">ผู้จัดการ</span>
+                <a href="mailto:s.nishide@westglory.co.th" class="email-link">s.nishide@westglory.co.th</a>
+              </div>
+              <div class="email-entry">
+                <span class="email-role" data-i18n="email_role2">ฝ่ายขาย</span>
+                <a href="mailto:p.teeraphit@westglory.co.th" class="email-link">p.teeraphit@westglory.co.th</a>
+              </div>
+              <div class="email-entry">
+                <span class="email-role" data-i18n="email_role3">ฝ่ายประสานงาน</span>
+                <a href="mailto:a.sureerat@westglory.co.th" class="email-link">a.sureerat@westglory.co.th</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="c-row"><div class="c-ic">🕐</div><div class="c-row-text"><h5 data-i18n="con_hours_h">เวลาทำการ</h5><p><span data-i18n="con_hours_v">วันจันทร์ – ศุกร์ เวลา 08:00 – 17:00 น.</span><br/><span data-i18n="con_hours_off" style="font-size:0.82rem;opacity:0.7;">หยุด เสาร์ อาทิตย์ และนักขัตฤกษ์</span></p></div></div>
+      </div>
+    </div>
+    <div class="contact-form">
+      <h3 data-i18n="form_title">📩 ส่งข้อความหาเรา</h3>
+      <div class="form-row">
+        <div class="form-group"><label data-i18n="form_name">ชื่อ – นามสกุล</label><input type="text" data-i18n-placeholder="form_name_ph" placeholder="ชื่อของคุณ"/></div>
+        <div class="form-group"><label data-i18n="form_company">บริษัท / องค์กร</label><input type="text" data-i18n-placeholder="form_company_ph" placeholder="ชื่อบริษัท"/></div>
+      </div>
+      <div class="form-group"><label data-i18n="form_email">อีเมล</label><input type="email" placeholder="email@company.com"/></div>
+      <div class="form-group">
+        <label data-i18n="form_product">ประเภทผลิตภัณฑ์ที่สนใจ</label>
+        <select>
+          <option value="" data-i18n="form_select">เลือกผลิตภัณฑ์</option>
+          <option>Seat Cover Film</option><option>Film Sheet Cover</option>
+          <option>Shopping Bags</option><option>Industrial Bags</option>
+          <option>Aquamarine Bags</option><option>Custom Solutions</option>
+        </select>
+      </div>
+      <div class="form-group"><label data-i18n="form_msg">รายละเอียด / ข้อความ</label><textarea data-i18n-placeholder="form_msg_ph" placeholder="กรุณาระบุปริมาณ ขนาด หรือข้อกำหนดพิเศษ..."></textarea></div>
+      <button class="submit-btn" id="submitBtn" type="button" data-i18n="form_submit" onclick="submitForm()">ส่งข้อความ →</button>
+      <div id="formMsg" style="margin-top:12px;font-size:0.9rem;text-align:center;display:none;"></div>
+    </div>
+  </div>
+</section>
+
+<script>
+function submitForm() {
+  var btn = document.getElementById('submitBtn');
+  var msg = document.getElementById('formMsg');
+  var name = document.querySelector('input[data-i18n-placeholder="form_name_ph"]').value.trim();
+  var company = document.querySelector('input[data-i18n-placeholder="form_company_ph"]').value.trim();
+  var email = document.querySelector('input[type="email"]').value.trim();
+  var product = document.querySelector('select').value;
+  var message = document.querySelector('textarea').value.trim();
+
+  if (!name || !email) {
+    msg.style.display = 'block';
+    msg.style.color = '#e74c3c';
+    msg.textContent = '⚠️ กรุณากรอกชื่อและอีเมล';
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = '⏳ กำลังส่ง...';
+  msg.style.display = 'none';
+
+  var SHEET_URL = 'https://script.google.com/macros/s/AKfycbx9a24FO_HxCFdl0_Ravb04mbuL2d3lH21eJe-wtz_kSwyATstCc0fXOOzlSQgtaGU-/exec';
+
+  fetch(SHEET_URL, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name:name, company:company, email:email, product:product, message:message })
+  })
+  .then(function() {
+    btn.disabled = false;
+    btn.textContent = 'ส่งข้อความ →';
+    msg.style.display = 'block';
+    msg.style.color = '#2ecc71';
+    msg.textContent = '✅ ส่งข้อความสำเร็จ! เราจะติดต่อกลับโดยเร็ว';
+    document.querySelector('input[data-i18n-placeholder="form_name_ph"]').value = '';
+    document.querySelector('input[data-i18n-placeholder="form_company_ph"]').value = '';
+    document.querySelector('input[type="email"]').value = '';
+    document.querySelector('select').value = '';
+    document.querySelector('textarea').value = '';
+  })
+  .catch(function() {
+    btn.disabled = false;
+    btn.textContent = 'ส่งข้อความ →';
+    msg.style.display = 'block';
+    msg.style.color = '#e74c3c';
+    msg.textContent = '❌ เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง';
+  });
+}
+</script>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-main">
+    <div class="footer-brand">
+      <img class="footer-logo-img" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCABXAFgDASIAAhEBAxEB/8QAHAAAAgIDAQEAAAAAAAAAAAAAAAYEBQEHCAID/8QAOhAAAQMDAgIGCAUCBwAAAAAAAQIDBAAFEQYhEjEHEyJBUWEUFRZxgZGhsQgjMkLBM9E0NkNScoKy/8QAGwEAAgMBAQEAAAAAAAAAAAAAAAQDBQYCAQf/xAAxEQABAwIEAwcDBAMAAAAAAAABAAIDBBEFEiExQVGBBhNhcaGx0SLB8BQykeEkJdL/2gAMAwEAAhEDEQA/AOy6KKKEIozUK53CJb4zkmbIQwygZKlGlf2jv14cKdO2nEbulzMoSfNKeZqKSdjDY7piGlkmGYaN5nQfz9hqnTNGaTk2XV0gFUrVIYUf2x44wPnWfUGqWk8TGrXVr5gPMJIPyqMTvOuQ+nypv0kN7d83+Hf8pwzWRSQq96tsx4rxamp0UHtPw88QHiU0yWG92+9RfSbfIS6gHChyUk+BHdXcc7HnLseRUc1HLEM+hbzBuP66qzoJoFGKmSiKKKKF6iqzUF2i2W2uzpa+FtA2Gd1K7gPEmrFRxmtV68jS9XO3ZUd5xuFZmyWQk/1JAGO404IpOwZQHNWGPrFJO5Y5YPFp+23PBIIzwjI/GqbqQ6Ns0nW9oQ8+LZNlhLqQkEqJCiRt4g9tFMzNLWVcYRZcl1aQlq3JKlZ2x3CgfatWv8ApcjaSEbhXZWpvF2F9JXHRtqkrxJZbEeTj9QABCvmn7VIFqsybLEgt2+AsRGEMhQYSCQkYzsMVQ2HT9j0/pUWWxfYv5kuOtuPMl5PGCvJwk59cV9GVKBHdXKksMJSy2JuqSvJQMkk8+fPFPIqzQJfU9FknA4ZRz2Y2G4KqJF+0v0h6M1YX7dbl2q5BRk9SwlRVkJ7iveIPjtWLXvSl+YfLFt1RBnxl7LZfZ4VAeY/OmLqZrLTl8mKlxNRQLfJCeCVGYkl5A7s4KVAexpbcuDcGMqKdcwXW1c3OLI28iM8+YpMlMbzLfT9pXFYqC7gkMpBz2r74a87Z/cdRJGy1i9vHq3/AJdNKKKKl0iiiiglFFFFCFjFaVpClbJSCT4CsquafcxqaFbCcpS0qS5+6dz/ABmqbV8Y/aMaYPAUAFfsKYAHdvSRiMuJJv8AjW4n1Xt0s4DGjp3FoqreGQm9Oaw0sLQ0Y8tuWB+S9O5BB+IpOHMHYM/Kn3pEsC7LrO4MhJTHlHr2z4g8/kc0n9G0RqRq65NODKGmUMg+J7R+VU/6Wn6MXG0qT6h/I7JeGVJw6tXNJ5+NMCiijGvNWOi6dv9rCKtbJuSblLkKW6uU+pCVKJ4hzHId3IVqnI+E5JyQD7Vb3/VRurjdtXdUJchO6UJlRlO8OQcZHhy5nvoDZnUz7e2HFJKQf5rIXi2EFRSSfZPxqNQzabJupW3btfJXFKkLKjjAI7u3ar6B0TQ7y3jd9QQ7oiQkJe6pxYQ5+3wq2EkAd2asNNdJ2mbk1HZvM+VZLiMJdQ80vqiodziFAEeYzWfSFjumtdYSLUqPcp8KOoJmSW3FdZjJAV3HYZHLyzUxdnWHpVyQ0pRxnHb3VXxBjPmkkb8MjvBqcjhWA5xgbdwWU7mTwHLXiCb/G+p0laaKKKFMpFFFFFCf/2Q==" alt="West Glory Logo"/>
+      <div class="logo-en">West <span>Glory</span></div>
+      <p data-i18n="footer_brand">ผู้ผลิตฟิล์มโพลิเอทิลีนคุณภาพสูง สำหรับอุตสาหกรรมยานยนต์และบรรจุภัณฑ์ ส่งออกหลักไปญี่ปุ่น ก่อตั้งปี 1999</p>
+    </div>
+    <div class="footer-col">
+      <h4 data-i18n="nav_products">ผลิตภัณฑ์</h4>
+      <ul>
+        <li><a href="#">Seat Cover Film</a></li><li><a href="#">Film Sheet Cover</a></li>
+        <li><a href="#">Shopping Bags</a></li><li><a href="#">Industrial Bags</a></li>
+        <li><a href="#">Aquamarine Bags</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 data-i18n="footer_company">บริษัท</h4>
+      <ul>
+        <li><a href="#" data-i18n="nav_about">เกี่ยวกับเรา</a></li>
+        <li><a href="#" data-i18n="nav_process">กระบวนการผลิต</a></li>
+        <li><a href="#" data-i18n="nav_certs">มาตรฐานคุณภาพ</a></li>
+        <li><a href="#" data-i18n="nav_clients">ตลาดส่งออก</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 data-i18n="nav_contact">ติดต่อ</h4>
+      <ul>
+        <li><a href="tel:038066433">038-066433-7</a></li>
+        <li><a href="mailto:s.nishide@westglory.co.th">s.nishide@westglory.co.th</a></li>
+        <li><a href="mailto:p.teeraphit@westglory.co.th">p.teeraphit@westglory.co.th</a></li>
+        <li><a href="mailto:a.sureerat@westglory.co.th">a.sureerat@westglory.co.th</a></li>
+        <li><a href="#">Sriracha, Chonburi</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 West Glory Company Limited. All rights reserved. | Sriracha, Chonburi 20110, Thailand</p>
+    <div class="footer-cert">
+      <span class="fcert">BOI APPROVED</span>
+      <span class="fcert">ISO CERTIFIED</span>
+      <span class="fcert">JAPAN EXPORT</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ════════════════════════════════════════════
+//  TRANSLATION DATA
+// ════════════════════════════════════════════
+const T = {
+  th: {
+    nav_about:"เกี่ยวกับเรา", nav_products:"ผลิตภัณฑ์", nav_clients:"ตลาดส่งออก",
+    nav_certs:"มาตรฐาน", nav_process:"กระบวนการผลิต", nav_contact:"ติดต่อเรา",
+    hero_tag:"✦ ผู้ผลิตฟิล์มโพลิเอทิลีน · ก่อตั้งปี 1999",
+    hero_h1:'ผู้ผลิต<em>ฟิล์มโพลิเอทิลีน</em><br/>มาตรฐานระดับโลก',
+    hero_desc:"West Glory Co., Ltd. ผู้ผลิตฟิล์ม PE คุณภาพสูงสำหรับอุตสาหกรรมยานยนต์และบรรจุภัณฑ์ ส่งออกหลักไปยังผู้ผลิตรถยนต์ชั้นนำในญี่ปุ่น ด้วยเทคโนโลยีจาก Asahi Petrochemicals ฮามามัตสึ",
+    hero_btn1:"ดูผลิตภัณฑ์", hero_btn2:"ขอใบเสนอราคา",
+    badge_years:"ปีประสบการณ์", badge_export:"ตลาดส่งออก",
+    hcard_status_label:"สถานะโรงงาน", hcard_status_val:"กำลังผลิต", hcard_cert_label:"ใบรับรองล่าสุด",
+    trust1:"ส่งออกหลักไปญี่ปุ่น", trust2:"โรงงาน ศรีราชา ชลบุรี",
+    trust3:"บริษัทในเครือ Asahi Petrochemicals", trust4:"ได้รับการรับรอง BOI Thailand", trust5:"ก่อตั้งปี ค.ศ. 1999",
+    founded:"ปีที่ก่อตั้ง",
+    about_label:"เกี่ยวกับบริษัท", about_title:"ประสบการณ์กว่า<br/>25 ปีในอุตสาหกรรม PE Film",
+    about_body:"West Glory Company Limited ก่อตั้งขึ้นในปี 1999 เป็นบริษัทที่ได้รับการอนุมัติจาก BOI ประเทศไทย ตั้งอยู่ที่อำเภอศรีราชา ห่างจากกรุงเทพฯ เพียง 90 นาที เราเชี่ยวชาญในการผลิตฟิล์มโพลิเอทิลีนสำหรับหุ้มเบาะรถยนต์ ฟิล์มแผ่น และถุงอุตสาหกรรม",
+    fact1_h:"บริษัทในเครือจากญี่ปุ่น", fact1_p:"เป็นบริษัทลูกของ Asahi Petrochemicals ฮามามัตสึ ซิตี้ ประเทศญี่ปุ่น",
+    fact2_p:"ได้รับการส่งเสริมจากสำนักงานคณะกรรมการส่งเสริมการลงทุน",
+    fact3_h:"โรงงานมาตรฐาน", fact3_p:"ตั้งอยู่ในทำเลเชิงยุทธศาสตร์ที่ศรีราชา ชลบุรี ใกล้ท่าเรือและนิคมอุตสาหกรรม",
+    fact4_h:"เทคโนโลยีญี่ปุ่น", fact4_p:"นำความรู้และประสบการณ์กว่า 20 ปีจาก Asahi Petrochemicals มาใช้",
+    prod_label:"ผลิตภัณฑ์ของเรา", prod_title:"Polyethylene Film<br/>ครบทุกประเภท", prod_sub:"ทุกผลิตภัณฑ์ผ่านการตรวจสอบคุณภาพอย่างเข้มงวดก่อนส่งมอบ",
+    p1_h:"ฟิล์มหุ้มเบาะรถยนต์", p1_p:"ฟิล์ม PE สำหรับหุ้มเบาะรถยนต์ ออกแบบมาเพื่อป้องกันฝุ่นและรอยขีดข่วนในกระบวนการประกอบ ส่งตรงให้ผู้ผลิตรถยนต์ญี่ปุ่น",
+    p2_h:"แผ่นฟิล์มคลุมสินค้า", p2_p:"แผ่นฟิล์มคลุมสินค้า หลากหลายขนาดและความหนา ใช้งานได้ทั้งในอุตสาหกรรมยานยนต์และบรรจุภัณฑ์ทั่วไป",
+    p3_h:"ถุงช้อปปิ้ง", p3_p:"ถุงโพลิเอทิลีนสำหรับค้าปลีก ทนทาน น้ำหนักเบา ปรับแต่งขนาดและสีสันได้ตามความต้องการ",
+    p4_h:"ถุงอุตสาหกรรม", p4_p:"ถุงอุตสาหกรรมขนาดใหญ่ รับน้ำหนักได้สูง ทนทานต่อสารเคมีและความชื้น จำหน่ายทั่วจังหวัดในประเทศญี่ปุ่น",
+    p5_h:"ถุงอาความารีน", p5_p:"ถุงสำหรับงานใต้น้ำและอุตสาหกรรมประมง ทนทานต่อน้ำทะเลและสภาพแวดล้อมที่รุนแรง",
+    p6_h:"ผลิตตามสั่ง", p6_p:"บริการผลิตตามสเปคพิเศษของลูกค้า ออกแบบฟิล์มและถุง PE เฉพาะกิจตามความต้องการ",
+    cli_label:"ตลาดส่งออก", cli_title:"ผลิตภัณฑ์ของเราอยู่ในมือ<br/>ผู้ผลิตชั้นนำทั่วโลก",
+    cli_body:"ส่วนใหญ่ของการผลิตจัดส่งไปยังผู้ผลิตรถยนต์รายใหญ่ในญี่ปุ่น พร้อมกับถุงอุตสาหกรรมที่จำหน่ายทั่วหลายจังหวัดในญี่ปุ่น",
+    cli_jp:"ลูกค้าหลักคือผู้ผลิตรถยนต์ชั้นนำและอุตสาหกรรมบรรจุภัณฑ์ทั่วประเทศ",
+    cli_th:"จัดจำหน่ายให้อุตสาหกรรมยานยนต์และนิคมอุตสาหกรรมในประเทศ",
+    cli_ashai:"เครือข่ายพันธมิตรจาก Asahi Petrochemicals ฮามามัตสึ ซิตี้ ที่มีประสบการณ์กว่า 20 ปีในการผลิตฟิล์ม PE ระดับโลก ถ่ายทอดความเชี่ยวชาญสู่ West Glory โดยตรง",
+    cert_label:"มาตรฐานและการรับรอง", cert_title:"ความน่าเชื่อถือ<br/>ที่ได้รับการรับรอง",
+    cert1_p:"ได้รับการส่งเสริมและรับรองจากสำนักงานคณะกรรมการส่งเสริมการลงทุนแห่งประเทศไทย",
+    cert2_p:"จดทะเบียนเป็นบริษัทที่มีทุนจดทะเบียนจากต่างประเทศ ภายใต้กฎหมายไทย",
+    cert3_p:"ระบบควบคุมคุณภาพตามมาตรฐานอุตสาหกรรมยานยนต์ญี่ปุ่นอย่างเข้มงวด",
+    cert4_p:"ผ่านการรับรองสำหรับการส่งออกสินค้าไปยังประเทศญี่ปุ่นและตลาดต่างประเทศ",
+    proc_label:"กระบวนการผลิต", proc_title:"มาตรฐานการผลิต<br/>ระดับ OEM ญี่ปุ่น",
+    proc_body:"ทุกขั้นตอนการผลิตของเราได้รับการออกแบบตามมาตรฐานที่ผู้ผลิตรถยนต์ชั้นนำของญี่ปุ่นกำหนด เพื่อให้มั่นใจในคุณภาพที่สม่ำเสมอ",
+    step1_h:"การคัดเลือกวัตถุดิบ", step1_p:"คัดสรรเม็ดพลาสติก Polyethylene เกรดพรีเมียมจากซัพพลายเออร์ที่ผ่านการรับรองมาตรฐานสากล",
+    step2_h:"กระบวนการเป่าฟิล์ม", step2_p:"ใช้เครื่องจักรเทคโนโลยีทันสมัยจากญี่ปุ่น ควบคุมความหนาและความกว้างอย่างแม่นยำ",
+    step3_h:"การตรวจสอบคุณภาพ", step3_p:"ทดสอบทุกล็อตการผลิตตามมาตรฐาน JIS และข้อกำหนดเฉพาะของลูกค้า",
+    step4_h:"บรรจุภัณฑ์และจัดส่ง", step4_p:"บรรจุตามมาตรฐานส่งออก พร้อมเอกสารรับรองครบถ้วน จัดส่งตรงเวลาตามกำหนด",
+    con_title:"ติดต่อเรา", con_body:"ทีมงานของเราพร้อมตอบทุกคำถามและจัดทำใบเสนอราคาให้กับคุณโดยเร็วที่สุด",
+    con_addr_h:"ที่อยู่โรงงาน", con_tel_h:"โทรศัพท์", con_email_h:"อีเมล", con_hours_h:"เวลาทำการ",
+    con_hours_v:"วันจันทร์ – ศุกร์ เวลา 08:00 – 17:00 น.",
+    con_hours_off:"หยุด เสาร์ อาทิตย์ และนักขัตฤกษ์",
+    form_title:"📩 ส่งข้อความหาเรา", form_name:"ชื่อ – นามสกุล", form_name_ph:"ชื่อของคุณ",
+    form_company:"บริษัท / องค์กร", form_company_ph:"ชื่อบริษัท", form_email:"อีเมล",
+    form_product:"ประเภทผลิตภัณฑ์ที่สนใจ", form_select:"เลือกผลิตภัณฑ์",
+    form_msg:"รายละเอียด / ข้อความ", form_msg_ph:"กรุณาระบุปริมาณ ขนาด หรือข้อกำหนดพิเศษ...",
+    form_submit:"ส่งข้อความ →",
+    footer_brand:"ผู้ผลิตฟิล์มโพลิเอทิลีนคุณภาพสูง สำหรับอุตสาหกรรมยานยนต์และบรรจุภัณฑ์ ส่งออกหลักไปญี่ปุ่น ก่อตั้งปี 1999",
+    footer_company:"บริษัท",
+    email_role1:"ผู้จัดการ", email_role2:"ฝ่ายขาย", email_role3:"ฝ่ายประสานงาน",
+  },
+
+  en: {
+    nav_about:"About Us", nav_products:"Products", nav_clients:"Export Markets",
+    nav_certs:"Certifications", nav_process:"Manufacturing", nav_contact:"Contact Us",
+    hero_tag:"✦ Polyethylene Film Manufacturer · Since 1999",
+    hero_h1:'Premium <em>Polyethylene Film</em><br/>Manufacturer',
+    hero_desc:"West Glory Co., Ltd. is a leading PE film manufacturer for the automotive and packaging industries, exporting primarily to Japan's top automakers, backed by Asahi Petrochemicals' Japanese technology.",
+    hero_btn1:"View Products", hero_btn2:"Request a Quote",
+    badge_years:"Years Experience", badge_export:"Export Market",
+    hcard_status_label:"Factory Status", hcard_status_val:"In Production", hcard_cert_label:"Latest Certification",
+    trust1:"Primary Export to Japan", trust2:"Factory in Sriracha, Chonburi",
+    trust3:"Subsidiary of Asahi Petrochemicals", trust4:"BOI Thailand Approved", trust5:"Established 1999",
+    founded:"Year Established",
+    about_label:"About the Company", about_title:"Over 25 Years of<br/>PE Film Industry Experience",
+    about_body:"West Glory Company Limited was established in 1999 as a BOI-approved company in Thailand, located in Sriracha, just 90 minutes from Bangkok. We specialize in manufacturing polyethylene films for automotive seat covers, film sheets, and industrial bags.",
+    fact1_h:"Japanese Subsidiary", fact1_p:"Subsidiary of Asahi Petrochemicals, Hamamatsu City, Japan.",
+    fact2_p:"Promoted and approved by the Thailand Board of Investment (BOI).",
+    fact3_h:"Strategic Factory Location", fact3_p:"Located in Sriracha, Chonburi — near seaports and industrial estates.",
+    fact4_h:"Japanese Technology", fact4_p:"Leveraging 20+ years of Asahi Petrochemicals' expertise in PE film production.",
+    prod_label:"Our Products", prod_title:"Complete Range of<br/>Polyethylene Films", prod_sub:"Every product undergoes rigorous quality inspection before delivery.",
+    p1_h:"Seat Cover Film", p1_p:"PE film designed to protect car seat cushions from dust and scratches during assembly. Delivered directly to Japanese automakers.",
+    p2_h:"Film Sheet Cover", p2_p:"Cover film sheets in various sizes and thicknesses, suitable for automotive and general packaging industries.",
+    p3_h:"Shopping Bags", p3_p:"Polyethylene retail bags — durable, lightweight, and fully customizable in size and color.",
+    p4_h:"Industrial Bags", p4_p:"Heavy-duty industrial bags with high load capacity, chemical and moisture resistant. Distributed across Japan.",
+    p5_h:"Aquamarine Bags", p5_p:"Bags designed for underwater applications and the fishing industry, resistant to seawater and harsh environments.",
+    p6_h:"Custom Solutions", p6_p:"Custom PE film and bag manufacturing per client specifications, with full OEM and R&D support.",
+    cli_label:"Export Markets", cli_title:"Our Products Reach<br/>World-Class Manufacturers",
+    cli_body:"The majority of our production is shipped to major automotive manufacturers in Japan, along with industrial and aquamarine bags distributed across multiple Japanese prefectures.",
+    cli_jp:"Primary clients are leading automotive manufacturers and packaging industries throughout Japan.",
+    cli_th:"Supplying the automotive industry and industrial estates domestically.",
+    cli_ashai:"Backed by the Asahi Petrochemicals network from Hamamatsu City, Japan — 20+ years of global PE film expertise transferred directly to West Glory.",
+    cert_label:"Standards & Certifications", cert_title:"Trust Built on<br/>Verified Credentials",
+    cert1_p:"Promoted and certified by the Thailand Board of Investment (BOI).",
+    cert2_p:"Registered as a non-Thai resident capital company under Thai law.",
+    cert3_p:"Strict quality control aligned with Japanese automotive industry standards.",
+    cert4_p:"Certified for export to Japan and international markets.",
+    proc_label:"Manufacturing Process", proc_title:"Japanese OEM-Grade<br/>Production Standards",
+    proc_body:"Every step of our production process is designed to meet the exacting standards of Japan's leading automotive manufacturers, ensuring consistent quality.",
+    step1_h:"Raw Material Selection", step1_p:"Premium Polyethylene pellets sourced from internationally certified suppliers.",
+    step2_h:"Film Blowing Process", step2_p:"State-of-the-art Japanese machinery precisely controls film thickness and width.",
+    step3_h:"Quality Inspection", step3_p:"Every production lot tested to JIS standards and customer-specific requirements.",
+    step4_h:"Packaging & Delivery", step4_p:"Export-standard packaging with complete certification documentation, delivered on schedule.",
+    con_title:"Contact Us", con_body:"Our team is ready to answer your questions and prepare a quote as quickly as possible.",
+    con_addr_h:"Factory Address", con_tel_h:"Telephone", con_email_h:"Email", con_hours_h:"Business Hours",
+    con_hours_v:"Monday – Friday, 08:00 – 17:00",
+    con_hours_off:"Closed on Saturdays, Sundays & Public Holidays",
+    form_title:"📩 Send Us a Message", form_name:"Full Name", form_name_ph:"Your name",
+    form_company:"Company / Organization", form_company_ph:"Company name", form_email:"Email",
+    form_product:"Product of Interest", form_select:"Select a product",
+    form_msg:"Details / Message", form_msg_ph:"Please specify quantity, size, or special requirements...",
+    form_submit:"Send Message →",
+    footer_brand:"High-quality polyethylene film manufacturer for the automotive and packaging industries. Primary export to Japan. Established 1999.",
+    footer_company:"Company",
+    email_role1:"Manager", email_role2:"Sales", email_role3:"Coordinator",
+  },
+
+  ja: {
+    nav_about:"会社概要", nav_products:"製品", nav_clients:"輸出市場",
+    nav_certs:"認証・規格", nav_process:"製造工程", nav_contact:"お問い合わせ",
+    hero_tag:"✦ ポリエチレンフィルムメーカー · 1999年創業",
+    hero_h1:'高品質<em>ポリエチレンフィルム</em><br/>グローバル基準の製造',
+    hero_desc:"ウェストグローリー株式会社は、自動車・包装産業向け高品質PEフィルムの専業メーカーです。浜松市の旭石油化学の技術を基盤に、日本の大手自動車メーカーへ製品を供給しています。",
+    hero_btn1:"製品を見る", hero_btn2:"見積もりを依頼",
+    badge_years:"年の経験", badge_export:"輸出市場",
+    hcard_status_label:"工場ステータス", hcard_status_val:"稼働中", hcard_cert_label:"最新認証",
+    trust1:"主な輸出先は日本", trust2:"工場：シラチャ チョンブリ県",
+    trust3:"旭石油化学グループ会社", trust4:"BOIタイランド認定", trust5:"1999年創業",
+    founded:"創業年",
+    about_label:"会社概要", about_title:"PEフィルム業界<br/>25年以上の実績",
+    about_body:"ウェストグローリー株式会社は1999年に設立され、タイ投資委員会（BOI）の認定を受けた企業です。バンコクから車で約90分のシラチャに位置し、自動車シートカバー用フィルム、フィルムシート、産業用袋の製造を専門としています。",
+    fact1_h:"日本の関連会社", fact1_p:"浜松市の旭石油化学の子会社です。",
+    fact2_p:"タイ投資委員会（BOI）の認定・支援を受けています。",
+    fact3_h:"戦略的な工場立地", fact3_p:"港湾・工業団地に近いシラチャ（チョンブリ県）に立地しています。",
+    fact4_h:"日本の技術", fact4_p:"旭石油化学の20年以上の知識・技術をウェストグローリーに活用しています。",
+    prod_label:"製品紹介", prod_title:"ポリエチレンフィルム<br/>全製品ラインナップ", prod_sub:"すべての製品は出荷前に厳格な品質検査を実施しています。",
+    p1_h:"シートカバーフィルム", p1_p:"組み立て工程中のシートをホコリや傷から保護するPEフィルム。日本の自動車メーカーに直接納入。",
+    p2_h:"フィルムシートカバー", p2_p:"各種サイズ・厚さのカバーフィルム。自動車産業および一般包装用に使用可能。",
+    p3_h:"ショッピングバッグ", p3_p:"耐久性が高く軽量な小売用ポリエチレン袋。サイズ・カラーのカスタム対応可。",
+    p4_h:"産業用バッグ", p4_p:"高耐荷重・耐薬品・防湿性の大型産業用袋。日本各地の複数の県で流通。",
+    p5_h:"アクアマリンバッグ", p5_p:"水中作業・水産業向けの袋。海水や過酷な環境に対する高い耐性を持つ。",
+    p6_h:"カスタムソリューション", p6_p:"お客様の仕様に合わせたPEフィルム・袋の受注生産。OEMおよびR&Dサポート対応。",
+    cli_label:"輸出市場", cli_title:"世界トップメーカーに<br/>製品を供給",
+    cli_body:"生産の大部分は日本の大手自動車メーカーに出荷され、産業用袋・アクアマリンバッグは日本各地の複数県で流通しています。",
+    cli_jp:"主な顧客は日本全国の大手自動車メーカーおよび包装産業です。",
+    cli_th:"国内の自動車産業および工業団地への供給も行っています。",
+    cli_ashai:"浜松市の旭石油化学ネットワークを基盤に、20年以上の世界レベルのPEフィルム製造ノウハウをウェストグローリーに直接移転しています。",
+    cert_label:"認証・規格", cert_title:"確かな実績に<br/>裏付けられた信頼",
+    cert1_p:"タイ投資委員会（BOI）による認定・推進を受けています。",
+    cert2_p:"タイ法に基づく外資系資本会社として登録されています。",
+    cert3_p:"日本の自動車産業規格に準拠した厳格な品質管理システムを導入。",
+    cert4_p:"日本および海外市場向けの輸出認証を取得済み。",
+    proc_label:"製造工程", proc_title:"日本OEM水準の<br/>生産管理",
+    proc_body:"すべての製造工程は、日本の主要自動車メーカーの厳格な基準に基づいて設計されており、一貫した品質を確保しています。",
+    step1_h:"原材料の選定", step1_p:"国際認証を受けたサプライヤーからプレミアムグレードのポリエチレンペレットを調達。",
+    step2_h:"フィルム成形工程", step2_p:"最新の日本製機械を使用し、フィルムの厚さと幅を精密にコントロール。",
+    step3_h:"品質検査", step3_p:"JIS規格および顧客仕様に基づき、すべての生産ロットを検査。",
+    step4_h:"梱包・出荷", step4_p:"輸出基準に準拠した梱包と完全な認証書類を添付し、期日通りに納品。",
+    con_title:"お問い合わせ", con_body:"スタッフがご質問にお答えし、お見積もりを迅速にご提供いたします。",
+    con_addr_h:"工場所在地", con_tel_h:"電話番号", con_email_h:"メールアドレス", con_hours_h:"営業時間",
+    con_hours_v:"月曜日〜金曜日 08:00〜17:00",
+    con_hours_off:"土曜・日曜・祝日は休業",
+    form_title:"📩 メッセージを送る", form_name:"氏名", form_name_ph:"お名前",
+    form_company:"会社名 / 組織名", form_company_ph:"会社名", form_email:"メールアドレス",
+    form_product:"ご興味のある製品", form_select:"製品を選択してください",
+    form_msg:"詳細 / メッセージ", form_msg_ph:"数量・サイズ・特別要件などをご記入ください...",
+    form_submit:"送信する →",
+    footer_brand:"自動車・包装産業向け高品質ポリエチレンフィルムメーカー。主な輸出先は日本。1999年創業。",
+    footer_company:"会社情報",
+    email_role1:"マネージャー", email_role2:"営業担当", email_role3:"コーディネーター",
+  },
+
+  zh: {
+    nav_about:"关于我们", nav_products:"产品", nav_clients:"出口市场",
+    nav_certs:"认证标准", nav_process:"生产流程", nav_contact:"联系我们",
+    hero_tag:"✦ 聚乙烯薄膜制造商 · 成立于1999年",
+    hero_h1:'专业<em>聚乙烯薄膜</em><br/>国际标准制造商',
+    hero_desc:"威格洛丽有限公司是汽车及包装行业高品质PE薄膜的专业制造商，主要出口至日本顶级汽车制造商，依托旭石油化学（浜松市）的日本技术支持。",
+    hero_btn1:"查看产品", hero_btn2:"申请报价",
+    badge_years:"年行业经验", badge_export:"出口市场",
+    hcard_status_label:"工厂状态", hcard_status_val:"生产中", hcard_cert_label:"最新认证",
+    trust1:"主要出口至日本", trust2:"工厂位于泰国春武里府",
+    trust3:"旭石油化学集团子公司", trust4:"获泰国BOI认证", trust5:"成立于1999年",
+    founded:"成立年份",
+    about_label:"公司简介", about_title:"25年以上<br/>聚乙烯薄膜行业经验",
+    about_body:"威格洛丽有限公司成立于1999年，是获泰国投资委员会（BOI）批准的企业，位于距曼谷约90分钟车程的春武里府斯拉差。专业生产汽车座椅套用聚乙烯薄膜、覆盖膜及工业袋。",
+    fact1_h:"日本关联企业", fact1_p:"为日本浜松市旭石油化学的子公司。",
+    fact2_p:"获泰国投资委员会（BOI）批准和支持。",
+    fact3_h:"战略性工厂位置", fact3_p:"位于靠近港口和工业园区的斯拉差（春武里府）。",
+    fact4_h:"日本技术", fact4_p:"将旭石油化学20余年的知识与经验直接应用于威格洛丽的生产。",
+    prod_label:"我们的产品", prod_title:"聚乙烯薄膜<br/>全系列产品", prod_sub:"所有产品在发货前均经过严格质量检测。",
+    p1_h:"座椅套薄膜", p1_p:"专为汽车座椅设计的PE薄膜，防止组装过程中的灰尘和划伤，直接供货日本汽车制造商。",
+    p2_h:"覆盖薄膜", p2_p:"多种尺寸和厚度的覆盖薄膜，适用于汽车工业及通用包装行业。",
+    p3_h:"购物袋", p3_p:"零售用聚乙烯袋，耐用轻便，可根据需求定制尺寸和颜色。",
+    p4_h:"工业袋", p4_p:"大型重载工业袋，承重能力强，耐化学品和潮湿。在日本多个县市广泛销售。",
+    p5_h:"水产袋", p5_p:"适用于水下作业和渔业的专用袋，耐海水及恶劣环境。",
+    p6_h:"定制解决方案", p6_p:"按客户规格定制生产PE薄膜和袋，提供全套OEM及研发支持。",
+    cli_label:"出口市场", cli_title:"我们的产品供应<br/>全球顶级制造商",
+    cli_body:"大部分产品出口至日本大型汽车制造商，工业袋和水产袋也在日本多个县市广泛销售。",
+    cli_jp:"主要客户为日本全国顶级汽车制造商及包装行业企业。",
+    cli_th:"为国内汽车工业及工业园区供货。",
+    cli_ashai:"依托旭石油化学（日本浜松市）网络，将其20余年全球PE薄膜制造专业知识直接传授给威格洛丽。",
+    cert_label:"认证与标准", cert_title:"以认证为基础<br/>建立的可信赖品质",
+    cert1_p:"获泰国投资委员会（BOI）批准和认证。",
+    cert2_p:"依据泰国法律注册为外资企业。",
+    cert3_p:"严格执行日本汽车行业标准的质量管理体系。",
+    cert4_p:"已获得向日本及海外市场出口的认证。",
+    proc_label:"生产流程", proc_title:"日本OEM标准<br/>生产管理",
+    proc_body:"我们的每道生产工序均按照日本顶级汽车制造商的严格标准设计，确保品质始终如一。",
+    step1_h:"原材料筛选", step1_p:"从国际认证供应商采购优质聚乙烯颗粒。",
+    step2_h:"薄膜吹制工艺", step2_p:"使用先进的日本机械设备，精确控制薄膜厚度和宽度。",
+    step3_h:"质量检验", step3_p:"按照JIS标准及客户特定要求对每批次产品进行检测。",
+    step4_h:"包装与交付", step4_p:"按出口标准包装，附完整认证文件，按时交货。",
+    con_title:"联系我们", con_body:"我们的团队随时准备回答您的问题并尽快提供报价。",
+    con_addr_h:"工厂地址", con_tel_h:"电话", con_email_h:"电子邮件", con_hours_h:"营业时间",
+    con_hours_v:"周一至周五 08:00–17:00",
+    con_hours_off:"周六、周日及公共假日休息",
+    form_title:"📩 发送消息", form_name:"姓名", form_name_ph:"您的姓名",
+    form_company:"公司 / 机构", form_company_ph:"公司名称", form_email:"电子邮件",
+    form_product:"感兴趣的产品", form_select:"请选择产品",
+    form_msg:"详情 / 留言", form_msg_ph:"请注明数量、尺寸或特殊要求...",
+    form_submit:"发送消息 →",
+    footer_brand:"汽车及包装行业高品质聚乙烯薄膜制造商。主要出口至日本。成立于1999年。",
+    footer_company:"公司",
+    email_role1:"经理", email_role2:"销售", email_role3:"协调员",
+  }
+};
+
+// ════════════════════════════════════════════
+//  LANGUAGE SWITCHER ENGINE  (robust rebuild)
+// ════════════════════════════════════════════
+let currentLang = 'th';
+
+function setLang(lang, btnEl) {
+  currentLang = lang;
+
+  // ── 1. Update active button ──────────────
+  document.querySelectorAll('.lang-btn').forEach(function(b) {
+    b.classList.remove('active');
+  });
+  if (btnEl) btnEl.classList.add('active');
+
+  // ── 2. Get translation table ─────────────
+  var t = T[lang];
+  if (!t) return;
+
+  // ── 3. Swap font for CJK ─────────────────
+  if (lang === 'ja') {
+    document.body.style.fontFamily = "'Noto Sans JP','Noto Sans Thai',sans-serif";
+  } else if (lang === 'zh') {
+    document.body.style.fontFamily = "'Noto Sans SC','Noto Sans Thai',sans-serif";
+  } else {
+    document.body.style.fontFamily = "'Noto Sans Thai','Noto Sans JP','Noto Sans SC',sans-serif";
+  }
+
+  // ── 4. Translate every [data-i18n] element ──
+  // collect all, then sort by DOM depth (deepest first)
+  // so children are updated before their parents
+  var nodes = Array.from(document.querySelectorAll('[data-i18n]'));
+  nodes.sort(function(a, b) {
+    // compareDocumentPosition: 0x10 = b contains a  → a is deeper
+    return (b.compareDocumentPosition(a) & 0x10) ? -1 : 1;
+  });
+  nodes.forEach(function(el) {
+    var key = el.getAttribute('data-i18n');
+    if (t[key] !== undefined) {
+      el.innerHTML = t[key];
+    }
+  });
+
+  // ── 5. Translate placeholders ────────────
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el) {
+    var key = el.getAttribute('data-i18n-placeholder');
+    if (t[key] !== undefined) el.placeholder = t[key];
+  });
+}
+
+// Auto-init on page load to set correct state
+window.addEventListener('DOMContentLoaded', function() {
+  // mark Thai button active by default (already done in HTML)
+  // nothing else needed on load
+});
+
+</script>
+</body>
+</html>
